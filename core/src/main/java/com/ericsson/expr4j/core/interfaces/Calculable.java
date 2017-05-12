@@ -3,7 +3,7 @@
  */
 package com.ericsson.expr4j.core.interfaces;
 
-import com.ericsson.expr4j.core.exceptions.Expression4JException;
+import com.ericsson.expr4j.core.domains.ExpressionResult;
 
 /**
  * @author adeniranope
@@ -11,8 +11,8 @@ import com.ericsson.expr4j.core.exceptions.Expression4JException;
  */
 public interface Calculable {
 
-	public String evaluate(String... parameters) throws Expression4JException;
+	public ExpressionResult evaluate(String... parameters);
 	
-	public String validate(String... parameters) throws Expression4JException;
+	public ExpressionResult.Builder validate(String... parameters);
 	
 }

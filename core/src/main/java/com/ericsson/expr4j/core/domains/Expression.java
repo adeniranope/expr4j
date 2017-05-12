@@ -27,6 +27,10 @@ public class Expression implements Serializable {
 		this.expression = builder.expression;
 	}
 	
+	public static Builder builder(){
+		return new Builder();
+	}
+	
 	public String getExpression() {
 		return expression;
 	}

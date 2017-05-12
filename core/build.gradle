@@ -1,20 +1,36 @@
 dependencies{
 
+		//Hibernate Validation
         compile group: 'org.hibernate.validator', name: 'hibernate-validator', version: project.'hibernate-validator.version'
         
+        //Jackson Core
         compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: project.'jackson.version'
         compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: project.'jackson.version'
         compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: project.'jackson.version'
         compile group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version: project.'jackson.mapper.version'
         
-        compile group: 'com.google.guava', name: 'guava', version: project.'guava.version'        
+        //Google Guava
+        compile group: 'com.google.guava', name: 'guava', version: project.'guava.version'
+        
+        //Apache HTTP Component        
         compile group: 'org.apache.httpcomponents', name: 'httpclient', version: project.'apache-http.version'
         
+        //Spring core Framework
         compile group: 'org.springframework', name: 'spring-core', version: project.'spring-framework.version'
         compile group: 'org.springframework', name: 'spring-beans', version: project.'spring-framework.version'
         compile group: 'org.springframework', name: 'spring-web', version: project.'spring-framework.version'
         compile group: 'org.springframework', name: 'spring-webmvc', version: project.'spring-framework.version'
         compile group: 'org.springframework', name: 'spring-beans', version: project.'spring-framework.version'
         compile group: 'org.springframework', name: 'spring-context', version: project.'spring-framework.version'
+
+		//SLF4J logging
+		compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+		compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'
+		compile group: 'org.slf4j', name: 'jcl-over-slf4j', version: '1.7.25'
+		compile group: 'org.slf4j', name: 'log4j-over-slf4j', version: '1.7.25'
+		compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
+		
+		//JUnit
+		compile group: 'junit', name: 'junit', version: '4.12'
 
 }
