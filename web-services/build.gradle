@@ -1,0 +1,20 @@
+dependencies{
+
+		compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: project.'spring-boot.version'
+		compile group: 'org.springframework.boot', name: 'spring-boot', version: project.'spring-boot.version'
+		compile group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: project.'spring-boot.version'
+		compile group: 'org.springframework.boot', name: 'spring-boot-starter-web-services', version: project.'spring-boot.version'
+		
+        compile group: 'org.springframework', name: 'spring-core', version: project.'spring-framework.version'
+        compile group: 'org.springframework', name: 'spring-beans', version: project.'spring-framework.version'
+        compile group: 'org.springframework', name: 'spring-web', version: project.'spring-framework.version'
+        compile group: 'org.springframework', name: 'spring-webmvc', version: project.'spring-framework.version'
+        compile group: 'org.springframework', name: 'spring-beans', version: project.'spring-framework.version'
+        compile group: 'org.springframework', name: 'spring-context', version: project.'spring-framework.version'
+
+        compile group: 'com.google.guava', name: 'guava', version: project.'guava.version'        
+        compile group: 'org.apache.httpcomponents', name: 'httpclient', version: project.'apache-http.version'
+
+		compile project(":core")
+    
+}

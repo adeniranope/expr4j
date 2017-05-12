@@ -1,0 +1,20 @@
+dependencies{
+	
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: project.'jackson.version'
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: project.'jackson.version'
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: project.'jackson.version'
+        compile group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version: project.'jackson.mapper.version'	
+	
+        compile group: 'org.springframework', name: 'spring-core', version: project.'spring-framework.version'
+        compile group: 'org.springframework', name: 'spring-beans', version: project.'spring-framework.version'
+        compile group: 'org.springframework', name: 'spring-web', version: project.'spring-framework.version'
+        compile group: 'org.springframework', name: 'spring-webmvc', version: project.'spring-framework.version'
+        compile group: 'org.springframework', name: 'spring-beans', version: project.'spring-framework.version'
+        compile group: 'org.springframework', name: 'spring-context', version: project.'spring-framework.version'	
+        
+        compile group: 'com.google.guava', name: 'guava', version: project.'guava.version'        
+        compile group: 'org.apache.httpcomponents', name: 'httpclient', version: project.'apache-http.version'        
+	
+		compile project(":core")
+	
+}
