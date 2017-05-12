@@ -8,6 +8,14 @@ import com.ericsson.expr4j.core.exceptions.ErrorCode;
 import com.ericsson.expr4j.core.interfaces.Calculable;
 import com.google.common.base.Preconditions;
 
+/**
+ * 
+ * @author adeniranope
+ * 
+ * Core substraction function for one or more parameters
+ *
+ */
+
 public final class Substraction implements Calculable {
 
 	@Override

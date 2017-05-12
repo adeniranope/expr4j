@@ -11,12 +11,12 @@ import com.google.common.base.Preconditions;
 /**
  * 
  * @author adeniranope
- * 
- * Core addition function for one or more parameters
+ *
+ * Core Multiplication function for one or more parameters 
  *
  */
 
-public final class Addition implements Calculable {
+public final class Multiplication implements Calculable {
 
 	@Override
 	public ExpressionResult evaluate(String... parameters) {
@@ -26,9 +26,9 @@ public final class Addition implements Calculable {
 			expressionResultBuilder = this.validate(parameters);
 			ExpressionResult validationExpressionResult = expressionResultBuilder.build();
 			if (validationExpressionResult.getErrorCode() == null) {
-				BigDecimal bigDecimal = BigDecimal.ZERO;
+				BigDecimal bigDecimal = BigDecimal.ONE;
 				for (String param : parameters) {
-					bigDecimal = bigDecimal.add(new BigDecimal(param));
+					bigDecimal = bigDecimal.multiply(new BigDecimal(param));
 				}
 				expressionResultBuilder.result(bigDecimal.toString());
 			}
@@ -38,6 +38,7 @@ public final class Addition implements Calculable {
 		return expressionResultBuilder.build();
 	}
 
+	
 	@Override
 	public Builder validate(String... parameters) {
 		ExpressionResult.Builder exBuilder = ExpressionResult.builder();
