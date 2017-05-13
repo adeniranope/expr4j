@@ -5,32 +5,32 @@ import org.junit.Test;
 
 import com.ericsson.expr4j.core.domains.ExpressionResult;
 import com.ericsson.expr4j.core.exceptions.ErrorCode;
-import com.ericsson.expr4j.core.functions.Substraction;
+import com.ericsson.expr4j.core.functions.Division;
 import com.ericsson.expr4j.core.interfaces.Calculable;
 
-public class SubstractionTest {
+public class DivisionTest {
 
 	@Test
-	public void testSubstraction(){
-		Calculable calculable = new Substraction();
-		ExpressionResult expressionResult = calculable.evaluate("2","3","5","7");
-		Assert.assertEquals(expressionResult.getResult(),"-13");
+	public void testDivision(){
+		Calculable calculable = new Division();
+		ExpressionResult expressionResult = calculable.evaluate("12","3");
+		Assert.assertEquals(expressionResult.getResult(),"4");
 	}
 
 	@Test
 	public void testInvalidValue(){
-		Calculable calculable = new Substraction();
-		ExpressionResult expressionResult = calculable.evaluate("2","HY","5","7");
+		Calculable calculable = new Division();
+		ExpressionResult expressionResult = calculable.evaluate("2","HY");
 		Assert.assertEquals(expressionResult.getErrorCode() != null,true);
 		Assert.assertEquals(expressionResult.getErrorCode(),ErrorCode.NUMBER_FORMAT_CONVERSION_ERROR);
 	}
 	
 	@Test
 	public void testInvalidParameter(){
-		Calculable calculable = new Substraction();
+		Calculable calculable = new Division();
 		ExpressionResult expressionResult = calculable.evaluate();
 		Assert.assertEquals(expressionResult.getErrorCode() != null,true);
-		Assert.assertEquals(expressionResult.getErrorCode(),ErrorCode.INVALID_PARAMETER);
+		Assert.assertEquals(expressionResult.getErrorCode(),ErrorCode.INVALID_PARAMETER_LENGTH);
 	}
 	
 	

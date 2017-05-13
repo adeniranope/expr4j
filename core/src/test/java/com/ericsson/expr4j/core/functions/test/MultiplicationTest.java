@@ -11,7 +11,7 @@ import com.ericsson.expr4j.core.interfaces.Calculable;
 public class MultiplicationTest {
 
 	@Test
-	public void testAddition(){
+	public void testMultiplication(){
 		Calculable calculable = new Multiplication();
 		ExpressionResult expressionResult = calculable.evaluate("2","3","5","7");
 		Assert.assertEquals(expressionResult.getResult(),"210");

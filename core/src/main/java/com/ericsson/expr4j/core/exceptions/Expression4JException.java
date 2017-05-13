@@ -1,6 +1,6 @@
 package com.ericsson.expr4j.core.exceptions;
 
-public final class Expression4JException extends Exception {
+public final class Expression4JException extends IllegalArgumentException {
 
 	private static final long serialVersionUID = -3490136531821156912L;
 

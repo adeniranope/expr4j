@@ -2,6 +2,7 @@ package com.ericsson.expr4j.core.domains;
 
 import java.io.Serializable;
 
+import com.ericsson.expr4j.core.validations.Validations;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -45,9 +46,13 @@ public class Expression implements Serializable {
 		}
 		
 		public Expression build(){
-			return new Expression(this);
+			return Validations.validate(new Expression(this));
 		}
 		
+	}
+	
+	public String toString(){
+		return this.expression;
 	}
 	
 }
