@@ -7,6 +7,14 @@ import com.ericsson.expr4j.core.exceptions.ErrorCode;
 import com.ericsson.expr4j.core.functions.Factorial;
 import com.ericsson.expr4j.core.interfaces.Calculable;
 
+/**
+ * 
+ * @author adeniranope
+ * 
+ * The test class of a factorial function
+ *
+ */
+
 public class FactorialTest {
 
 	@Test

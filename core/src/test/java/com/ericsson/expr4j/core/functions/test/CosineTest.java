@@ -8,6 +8,14 @@ import com.ericsson.expr4j.core.exceptions.ErrorCode;
 import com.ericsson.expr4j.core.functions.Cosine;
 import com.ericsson.expr4j.core.interfaces.Calculable;
 
+/**
+ * 
+ * @author adeniranope
+ *
+ * The test class of the cosine function
+ *
+ */
+
 public class CosineTest {
 
 	@Test

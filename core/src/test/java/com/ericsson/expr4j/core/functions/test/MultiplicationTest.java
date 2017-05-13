@@ -8,6 +8,14 @@ import com.ericsson.expr4j.core.exceptions.ErrorCode;
 import com.ericsson.expr4j.core.functions.Multiplication;
 import com.ericsson.expr4j.core.interfaces.Calculable;
 
+/**
+ * 
+ * @author adeniranope
+ * 
+ * The test class of the multiplication function
+ *
+ */
+
 public class MultiplicationTest {
 
 	@Test

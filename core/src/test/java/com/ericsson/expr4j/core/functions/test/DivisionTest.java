@@ -8,6 +8,14 @@ import com.ericsson.expr4j.core.exceptions.ErrorCode;
 import com.ericsson.expr4j.core.functions.Division;
 import com.ericsson.expr4j.core.interfaces.Calculable;
 
+/**
+ * 
+ * @author adeniranope
+ *
+ * The test class of a division mathematical function
+ *
+ */
+
 public class DivisionTest {
 
 	@Test

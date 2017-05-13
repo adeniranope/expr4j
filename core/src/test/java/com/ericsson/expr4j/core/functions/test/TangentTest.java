@@ -5,40 +5,41 @@ import org.junit.Test;
 
 import com.ericsson.expr4j.core.domains.ExpressionResult;
 import com.ericsson.expr4j.core.exceptions.ErrorCode;
-import com.ericsson.expr4j.core.functions.Addition;
+import com.ericsson.expr4j.core.functions.Tangent;
 import com.ericsson.expr4j.core.interfaces.Calculable;
 
 /**
  * 
  * @author adeniranope
  *
- * The test class of the addition class
+ * Test class for the tangent class
  *
  */
 
-public class AdditionTest {
+public class TangentTest {
 
 	@Test
-	public void testAddition(){
-		Calculable calculable = new Addition();
-		ExpressionResult expressionResult = calculable.evaluate("2","3","5","7");
-		Assert.assertEquals(expressionResult.getResult(),"17");
+	public void testTangent(){
+		Calculable calculable = new Tangent();
+		ExpressionResult expressionResult = calculable.evaluate("30");
+		Assert.assertEquals(expressionResult.getResult(),"-6.405331196646276");
 	}
 
 	@Test
 	public void testInvalidValue(){
-		Calculable calculable = new Addition();
-		ExpressionResult expressionResult = calculable.evaluate("2","HY","5","7");
+		Calculable calculable = new Tangent();
+		ExpressionResult expressionResult = calculable.evaluate("KKY");
 		Assert.assertEquals(expressionResult.getErrorCode() != null,true);
 		Assert.assertEquals(expressionResult.getErrorCode(),ErrorCode.NUMBER_FORMAT_CONVERSION_ERROR);
 	}
 	
 	@Test
 	public void testInvalidParameter(){
-		Calculable calculable = new Addition();
+		Calculable calculable = new Tangent();
 		ExpressionResult expressionResult = calculable.evaluate();
 		Assert.assertEquals(expressionResult.getErrorCode() != null,true);
-		Assert.assertEquals(expressionResult.getErrorCode(),ErrorCode.INVALID_PARAMETER);
+		Assert.assertEquals(expressionResult.getErrorCode(),ErrorCode.INVALID_PARAMETER_LENGTH);
 	}
+	
 	
 }

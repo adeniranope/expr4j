@@ -8,6 +8,14 @@ import com.ericsson.expr4j.core.exceptions.ErrorCode;
 import com.ericsson.expr4j.core.functions.Sine;
 import com.ericsson.expr4j.core.interfaces.Calculable;
 
+/**
+ * 
+ * @author adeniranope
+ *
+ * The test class of the sine function
+ * 
+ */
+
 public class SineTest {
 
 	@Test
