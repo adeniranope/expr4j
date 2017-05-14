@@ -1,7 +1,7 @@
 dependencies{
 
 		//Hibernate Validation
-        compile group: 'org.hibernate.validator', name: 'hibernate-validator', version: project.'hibernate-validator.version'
+        compile group: 'org.hibernate', name: 'hibernate-validator', version: project.'hibernate-validator.version'
         
         //Jackson Core
         compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: project.'jackson.version'

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.ericsson.expr4j.api.domains.ExpressionRequest;
 import com.ericsson.expr4j.api.domains.ExpressionResponse;
@@ -29,6 +30,7 @@ import com.google.common.base.Preconditions;
  *
  */
 
+@EnableWebMvc
 @RestController
 public class JsonAPIController {
 
@@ -36,7 +38,7 @@ public class JsonAPIController {
 	Expression4JService expression4JService;
 
 	@ResponseBody
-	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE,value = "expr4j/evaluate")
 	public ExpressionResponse expression(@RequestBody ExpressionRequest expressionRequest, HttpServletRequest request,
 			HttpServletResponse response) {
 		ExpressionResponse expressionResponse = new ExpressionResponse();
