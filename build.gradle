@@ -56,7 +56,7 @@ subprojects{
 	}
 
 	configurations {
-		all
+		runtime.exclude group: "org.slf4j", module: "slf4j-log4j12"
 	}
 
 	sourceCompatibility = 1.8

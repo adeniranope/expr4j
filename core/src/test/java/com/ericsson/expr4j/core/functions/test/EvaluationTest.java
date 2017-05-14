@@ -27,6 +27,8 @@ public class EvaluationTest {
 		Assert.assertEquals("124.77778", exp);
 		exp = Evaluation.evaluate("10+(2*6)");
 		Assert.assertEquals("22", exp);
+		exp = Evaluation.evaluate("10+tan(30)");
+		Assert.assertEquals("3.594668803353724", exp);
 	}
 
 }

@@ -1,18 +1,19 @@
 dependencies{
 
-		compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: project.'spring-boot.version'
-		compile group: 'org.springframework.boot', name: 'spring-boot', version: project.'spring-boot.version'
-		compile group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: project.'spring-boot.version'
-		compile group: 'org.springframework.boot', name: 'spring-boot-starter-web-services', version: project.'spring-boot.version'
-		
+		//Spring Framework
         compile group: 'org.springframework', name: 'spring-core', version: project.'spring-framework.version'
         compile group: 'org.springframework', name: 'spring-beans', version: project.'spring-framework.version'
         compile group: 'org.springframework', name: 'spring-web', version: project.'spring-framework.version'
         compile group: 'org.springframework', name: 'spring-webmvc', version: project.'spring-framework.version'
         compile group: 'org.springframework', name: 'spring-beans', version: project.'spring-framework.version'
         compile group: 'org.springframework', name: 'spring-context', version: project.'spring-framework.version'
+        compile group: 'org.springframework', name: 'spring-test', version: project.'spring-framework.version'
 
+		//Guava Configuration
         compile group: 'com.google.guava', name: 'guava', version: project.'guava.version'        
+
+		//Test Cases
+		testCompile group: 'org.mockito', name: 'mockito-core', version: project.'mockito.version'
 
 		compile project(":core")
 	    

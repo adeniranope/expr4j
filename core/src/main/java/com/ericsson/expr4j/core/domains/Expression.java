@@ -4,10 +4,6 @@ import java.io.Serializable;
 
 import com.ericsson.expr4j.core.functions.Evaluation;
 import com.ericsson.expr4j.core.validations.Validations;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 /**
  * 
@@ -16,13 +12,10 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
  * Wrapper class for the expression
  *
  */
-@JsonInclude(Include.NON_NULL)
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class Expression implements Serializable {
+public final class Expression implements Serializable {
 
 	private static final long serialVersionUID = -3705362688857985343L;
 
-	@JsonProperty(required = true)
 	private final String expression;
 
 	protected Expression(Builder builder) {

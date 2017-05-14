@@ -179,12 +179,10 @@ public class Evaluation implements Serializable {
 		Operators fOperators = operatorMap.get(firstOperator);
 		Operators sOperators = operatorMap.get(secondOperator);
 		if (fOperators != null && sOperators != null) {
-			if (fOperators.getPrecedence() > sOperators.getPrecedence()) { // higher
-																			// precedence
+			if (fOperators.getPrecedence() > sOperators.getPrecedence()) {
 				return false;
 			}
-			if (fOperators.getPrecedence() < sOperators.getPrecedence()) { // lower
-																			// precedence
+			if (fOperators.getPrecedence() < sOperators.getPrecedence()) {
 				return true;
 			}
 		}
@@ -192,7 +190,7 @@ public class Evaluation implements Serializable {
 	}
 
 	/**
-	 * Check if its a closed parenthesis
+	 * Check if its a special character
 	 * 
 	 * @param token
 	 * @return

@@ -25,10 +25,7 @@ dependencies{
 
 		//SLF4J logging
 		compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
-		compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.25'
 		compile group: 'org.slf4j', name: 'jcl-over-slf4j', version: '1.7.25'
-		compile group: 'org.slf4j', name: 'log4j-over-slf4j', version: '1.7.25'
-		compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
 		
 		//JUnit
 		compile group: 'junit', name: 'junit', version: '4.12'
