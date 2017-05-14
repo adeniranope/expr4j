@@ -9,7 +9,7 @@ import com.ericsson.expr4j.core.domains.ExpressionResult;
  * @author adeniranope
  *
  */
-public interface Calculable {
+public interface CalculableFunction {
 
 	public ExpressionResult evaluate(String... parameters);
 	

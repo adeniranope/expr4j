@@ -11,6 +11,11 @@ public final class Expression4JException extends IllegalArgumentException {
 		this.message = exceptionMessage;
 	}
 
+	public Expression4JException(ErrorCode errorCode){
+		this.errorCode = errorCode;
+		this.message = super.getMessage();
+	}	
+	
 	public Expression4JException(ErrorCode errorCode,String exceptionMessage){
 		this.errorCode = errorCode;
 		this.message = exceptionMessage;

@@ -3,7 +3,7 @@ package com.ericsson.expr4j.core.functions;
 import com.ericsson.expr4j.core.domains.ExpressionResult;
 import com.ericsson.expr4j.core.domains.ExpressionResult.Builder;
 import com.ericsson.expr4j.core.exceptions.ErrorCode;
-import com.ericsson.expr4j.core.interfaces.Calculable;
+import com.ericsson.expr4j.core.interfaces.CalculableFunction;
 import com.google.common.base.Preconditions;
 
 /**
@@ -14,7 +14,7 @@ import com.google.common.base.Preconditions;
  *
  */
 
-public class Cosine implements Calculable {
+public class Cosine implements CalculableFunction {
 
 	@Override
 	public ExpressionResult evaluate(String... parameters) { 

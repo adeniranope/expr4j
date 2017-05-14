@@ -10,15 +10,16 @@ public class ExpressionTest {
 
 	/**
 	 * 
-	 * Constructs a new mathematical expression 
+	 * Constructs a new mathematical expression
 	 * 
 	 */
-	
+
 	@Test
 	public void testExpression() {
-		Expression expression = Expression.builder().expression("(2*3)+(9*8)").build();
+		Expression expression = Expression.builder().expression("(2*3)+(9*1)").build();
 		Assert.assertNotNull(expression);
-		Assert.assertEquals(expression.getExpression(), "(2*3)+(9*8)");
+		Assert.assertEquals(expression.getExpression(), "(2*3)+(9*1)");
+		Assert.assertEquals(expression.evaluate(), "15");
 	}
 
 	/**
@@ -30,10 +31,10 @@ public class ExpressionTest {
 	 */
 	@Test(expected = Expression4JException.class)
 	public void testExpressionBrackets() throws Expression4JException {
-		try{
-		Expression expression = Expression.builder().expression("(2*3+(9*8)").build();
-		Assert.assertEquals(expression.getExpression(),"(2*3+(9*8)");
-		}catch(Expression4JException ex){
+		try {
+			Expression expression = Expression.builder().expression("(2*3+(9*8)").build();
+			Assert.assertEquals(expression.getExpression(), "(2*3+(9*8)");
+		} catch (Expression4JException ex) {
 			throw ex;
 		}
 	}

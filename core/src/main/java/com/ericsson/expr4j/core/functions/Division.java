@@ -1,11 +1,12 @@
 package com.ericsson.expr4j.core.functions;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import com.ericsson.expr4j.core.domains.ExpressionResult;
 import com.ericsson.expr4j.core.domains.ExpressionResult.Builder;
 import com.ericsson.expr4j.core.exceptions.ErrorCode;
-import com.ericsson.expr4j.core.interfaces.Calculable;
+import com.ericsson.expr4j.core.interfaces.CalculableFunction;
 import com.google.common.base.Preconditions;
 
 /**
@@ -17,7 +18,7 @@ import com.google.common.base.Preconditions;
  *
  */
 
-public final class Division implements Calculable {
+public final class Division implements CalculableFunction {
 
 	@Override
 	public ExpressionResult evaluate(String... parameters) {
@@ -27,9 +28,9 @@ public final class Division implements Calculable {
 			expressionResultBuilder = this.validate(parameters);
 			ExpressionResult validationExpressionResult = expressionResultBuilder.build();
 			if (validationExpressionResult.getErrorCode() == null) {
-				BigDecimal dividend = new BigDecimal(parameters[0]);
-				BigDecimal divisor = new BigDecimal(parameters[1]);
-				expressionResultBuilder.result(dividend.divide(divisor).toString());
+				BigDecimal dividend = new BigDecimal(parameters[1]);
+				BigDecimal divisor = new BigDecimal(parameters[0]);
+				expressionResultBuilder.result(dividend.divide(divisor,5,RoundingMode.HALF_UP).toString());
 			}
 		} catch (Exception ex) {
 			expressionResultBuilder.errorCode(ErrorCode.INTERNAL_ERROR);

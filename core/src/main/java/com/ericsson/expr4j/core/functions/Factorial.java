@@ -2,10 +2,10 @@ package com.ericsson.expr4j.core.functions;
 
 import com.ericsson.expr4j.core.domains.ExpressionResult;
 import com.ericsson.expr4j.core.exceptions.ErrorCode;
-import com.ericsson.expr4j.core.interfaces.Calculable;
+import com.ericsson.expr4j.core.interfaces.CalculableFunction;
 import com.google.common.base.Preconditions;
 
-public final class Factorial implements Calculable {
+public final class Factorial implements CalculableFunction {
 
 	private Integer factorial(Integer number) {
 		if (number == 0) {
