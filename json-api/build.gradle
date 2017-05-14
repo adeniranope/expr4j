@@ -12,9 +12,11 @@ dependencies{
         compile group: 'org.springframework', name: 'spring-beans', version: project.'spring-framework.version'
         compile group: 'org.springframework', name: 'spring-context', version: project.'spring-framework.version'	
         
+        compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
+        
         compile group: 'com.google.guava', name: 'guava', version: project.'guava.version'        
         compile group: 'org.apache.httpcomponents', name: 'httpclient', version: project.'apache-http.version'        
 	
-		compile project(":core")
+		compile project(":services")
 	
 }
