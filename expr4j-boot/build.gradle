@@ -6,5 +6,7 @@ dependencies{
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web-services', version: project.'spring-boot.version'
 
 	compile project(":json-api")
-	compile project(":web-services")	
+	compile project(":web-services")
+	compile project(":core")
+	compile project(":services")	
 }

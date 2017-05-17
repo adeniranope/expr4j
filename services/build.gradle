@@ -12,6 +12,10 @@ dependencies{
 		//Guava Configuration
         compile group: 'com.google.guava', name: 'guava', version: project.'guava.version'        
 
+		//Apache Http Client
+		//compile group: 'org.apache.httpcomponents', name: 'httpclient', version: project.'apache-http.version'
+		compile 'org.apache.httpcomponents:httpclient:4.5.3'
+
 		//Test Cases
 		testCompile group: 'org.mockito', name: 'mockito-core', version: project.'mockito.version'
 
