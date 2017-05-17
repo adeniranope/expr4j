@@ -29,9 +29,9 @@ public class JsonServiceBean implements JsonService {
 	}
 
 	@Override
-	public Object fromJson(String json) {
+	public Object fromJson(String json,Class<?> classes) {
 		try {
-			new ObjectMapper().readValue(json, Object.class);
+			return new ObjectMapper().readValue(json,classes);
 		} catch (Exception ex) {
 			ex.printStackTrace(new PrintStream(System.out));
 		}
