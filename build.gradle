@@ -35,7 +35,6 @@ subprojects{
 		apply plugin:"java"
 		apply plugin: "eclipse"
 		apply plugin: "idea"
-		apply plugin: "org.springframework.boot"
 		apply plugin: "findbugs"
 
 	findbugs{
@@ -58,23 +57,40 @@ subprojects{
 
 	sourceCompatibility = 1.8
 
+	task testJar(type: Jar) {
+        classifier = 'tests'
+        from sourceSets.test.output.classesDir
+    }
+
 }
 
 subprojects.each { subproject -> evaluationDependsOn( subproject.path ) }
 jar.dependsOn subprojects.tasks['classes']
 
-jar {
-  baseName = 'expr4j'
-  manifest {
-    attributes 'Main-Class': 'com.ericsson.expr4j.api.boot.Application'
-  }
-  subprojects.each { subproject ->
-    from subproject.sourceSets.main.output.classesDir
-    from subproject.sourceSets.main.output.resourcesDir
-  }
+task allJar( type: Jar, dependsOn: subprojects.tasks["build"] ) {
+
+	baseName = 'expr4j'
+	
+	manifest{
+		attributes 'Title':'Expression4J','Main-Class':'org.springframework.boot.loader.JarLauncher','Start-Class':'com.ericsson.expr4j.api.boot.Application'
+	}
+	
+	destinationDir = new File("expr4j-boot","delivery")
+	
+    subprojects.each { subproject ->
+        from subproject.configurations.archives.allArtifacts.files.collect {
+            	zipTree(it)
+        }
+        from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+        from files(subproject.tasks["test"].testClassesDir)
+    }
+    
+}
+
+artifacts {
+	archives allJar
 }
 
 springBoot{
 	mainClass="com.ericsson.expr4j.api.boot.Application"
 }
-

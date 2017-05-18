@@ -1,12 +1,33 @@
+apply plugin: "org.springframework.boot"
+
 dependencies{
 
-	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: project.'spring-boot.version'
-	compile group: 'org.springframework.boot', name: 'spring-boot', version: project.'spring-boot.version'
-	compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: project.'spring-boot.version'
-	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web-services', version: project.'spring-boot.version'
+		//Boot
+		compile group: 'org.springframework.boot', name: 'spring-boot', version: project.'spring-boot.version'
+		compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: project.'spring-boot.version'
+		compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: project.'spring-boot.version'
+		compile group: 'org.springframework.boot', name: 'spring-boot-starter-web-services', version: project.'spring-boot.version'
 
-	compile project(":json-api")
-	compile project(":web-services")
-	compile project(":core")
-	compile project(":services")	
+        //Jackson Core
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: project.'jackson.version'
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: project.'jackson.version'
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: project.'jackson.version'
+        compile group: 'org.codehaus.jackson', name: 'jackson-mapper-asl', version: project.'jackson.mapper.version'
+        
+        //Google Guava
+        compile group: 'com.google.guava', name: 'guava', version: project.'guava.version'
+        
+        //Apache HTTP Component        
+        compile group: 'org.apache.httpcomponents', name: 'httpclient', version: project.'apache-http.version'
+        
+		//SLF4J logging
+		compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+		compile group: 'org.slf4j', name: 'jcl-over-slf4j', version: '1.7.25'
+	
+	
+		compile project(":json-api")
+		compile project(":web-services")
+		compile project(":core")
+		compile project(":services")	
+	
 }
