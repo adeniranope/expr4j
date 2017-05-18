@@ -108,7 +108,7 @@ public class Evaluation implements Serializable {
 			}
 
 			// construct operators
-			if (i < tokens.length && new Character(tokens[i]) != null && Evaluation.isOperator(tokens[i])) {
+			if (i < tokens.length && Character.valueOf(tokens[i]) != null && Evaluation.isOperator(tokens[i])) {
 				if(Evaluation.precedence(String.valueOf(tokens[i]),operatorStack.peek()) && !operatorStack.isEmpty()){
 					tokenStack.push(String.valueOf(Evaluation.evaluateOperation(operatorStack.pop(),tokenStack.pop(),tokenStack.pop())));
 				}

@@ -2,7 +2,7 @@ dependencies{
 
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: project.'spring-boot.version'
 	compile group: 'org.springframework.boot', name: 'spring-boot', version: project.'spring-boot.version'
-	compile group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: project.'spring-boot.version'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: project.'spring-boot.version'
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-web-services', version: project.'spring-boot.version'
 
 	compile project(":json-api")

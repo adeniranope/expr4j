@@ -41,7 +41,7 @@ public class ExpressionWebServiceBean implements ExpressionWebService {
 			String jsonResponse = this.jsonHttpService.send(HttpMethod.POST,
 					this.expression4JConfigurationService.jsonApiUrl(), expressionRequest);
 
-			ExpressionResponse expressionResponse = (ExpressionResponse)this.jsonService.fromJson(jsonResponse);
+			ExpressionResponse expressionResponse = (ExpressionResponse)this.jsonService.fromJson(jsonResponse,ExpressionResponse.class);
 			return expressionResponse;			
 		} catch (Exception ex) {
 			ex.printStackTrace(new PrintStream(System.out));

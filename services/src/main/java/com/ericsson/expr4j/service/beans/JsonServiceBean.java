@@ -1,7 +1,5 @@
 package com.ericsson.expr4j.service.beans;
 
-import java.io.PrintStream;
-
 import org.springframework.stereotype.Service;
 
 import com.ericsson.expr4j.service.JsonService;
@@ -23,7 +21,6 @@ public class JsonServiceBean implements JsonService {
 		try {
 			return new ObjectMapper().writeValueAsString(object);
 		} catch (Exception ex) {
-			ex.printStackTrace(new PrintStream(System.out));
 		}
 		return null;
 	}
@@ -33,7 +30,6 @@ public class JsonServiceBean implements JsonService {
 		try {
 			return new ObjectMapper().readValue(json,classes);
 		} catch (Exception ex) {
-			ex.printStackTrace(new PrintStream(System.out));
 		}
 		return null;
 	}

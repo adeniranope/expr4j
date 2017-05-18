@@ -2,6 +2,7 @@ package com.ericsson.expr4j.service.beans;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 
 import javax.net.ssl.SSLContext;
 
@@ -102,13 +103,14 @@ public class JsonHttpServiceBean implements JsonHttpService {
 
 		if (closeableHttpResponse != null) {
 			BufferedReader br = new BufferedReader(
-					new InputStreamReader(closeableHttpResponse.getEntity().getContent()));
+					new InputStreamReader(closeableHttpResponse.getEntity().getContent(),Charset.forName("UTF-8")));
 
 			StringBuilder stringBuilder = new StringBuilder();
 			String response = null;
 			while ((response = br.readLine()) != null) {
 				stringBuilder.append(response);
 			}
+			br.close();
 			closeableHttpClient.getConnectionManager().shutdown();
 
 			if (stringBuilder.toString().length() > 0) {

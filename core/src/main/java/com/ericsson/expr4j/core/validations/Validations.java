@@ -32,7 +32,7 @@ public enum Validations {
 		}
 		Integer a = StringUtils.countOccurrencesOf(value.toString(), "(");
 		Integer b = StringUtils.countOccurrencesOf(value.toString(), ")");
-		if (a == b) {
+		if (a.equals(b)) {
 			// check for allowed operators
 			return value;
 		} else {

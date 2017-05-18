@@ -1,7 +1,5 @@
 package com.ericsson.expr4j.api.controllers;
 
-import java.io.PrintStream;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -52,7 +50,6 @@ public class JsonAPIController {
 			expressionResponse.setResult(expressionResult.getResult());
 			expressionResponse.setErrorCode(expressionResult.getErrorCode());
 		} catch (Expression4JException ex) {
-			ex.printStackTrace(new PrintStream(System.err));
 			expressionResponse.setErrorCode(ex.getErrorCode());
 		}
 		return expressionResponse;

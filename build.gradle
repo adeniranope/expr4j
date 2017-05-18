@@ -20,10 +20,6 @@ apply plugin: "org.springframework.boot"
 sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
 
-jar{
-	baseName = "expr4j"
-	version = "1.0.0"
-}
 
 task wrapper(type:Wrapper){
 	gradleVersion = "3.1"
@@ -42,18 +38,19 @@ subprojects{
 		apply plugin: "org.springframework.boot"
 		apply plugin: "findbugs"
 
-	repositories{
-                mavenCentral()
-                jcenter()
-        }
-
 	findbugs{
-		ignoreFailures = true
+		ignoreFailures = false
 		toolVersion = "3.0.1"
 		sourceSets = [sourceSets.main]
 		reportsDir = file("$project.buildDir/reports/findbugs")
 		effort = "max"
 	}
+
+
+	repositories{
+                mavenCentral()
+                jcenter()
+        }
 
 	configurations {
 		runtime.exclude group: "org.slf4j", module: "slf4j-log4j12"
@@ -61,5 +58,23 @@ subprojects{
 
 	sourceCompatibility = 1.8
 
+}
+
+subprojects.each { subproject -> evaluationDependsOn( subproject.path ) }
+jar.dependsOn subprojects.tasks['classes']
+
+jar {
+  baseName = 'expr4j'
+  manifest {
+    attributes 'Main-Class': 'com.ericsson.expr4j.api.boot.Application'
+  }
+  subprojects.each { subproject ->
+    from subproject.sourceSets.main.output.classesDir
+    from subproject.sourceSets.main.output.resourcesDir
+  }
+}
+
+springBoot{
+	mainClass="com.ericsson.expr4j.api.boot.Application"
 }
 

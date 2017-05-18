@@ -21,8 +21,8 @@ public class DivisionTest {
 	@Test
 	public void testDivision(){
 		CalculableFunction calculable = new Division();
-		ExpressionResult expressionResult = calculable.evaluate("12","3");
-		Assert.assertEquals(expressionResult.getResult(),"4");
+		ExpressionResult expressionResult = calculable.evaluate("12","48");
+		Assert.assertEquals(expressionResult.getResult(),"4.00000");
 	}
 
 	@Test
