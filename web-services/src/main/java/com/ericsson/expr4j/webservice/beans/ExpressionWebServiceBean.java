@@ -1,7 +1,5 @@
 package com.ericsson.expr4j.webservice.beans;
 
-import java.io.PrintStream;
-
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
@@ -11,6 +9,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import com.ericsson.expr4j.api.domains.ExpressionRequest;
 import com.ericsson.expr4j.api.domains.ExpressionResponse;
 import com.ericsson.expr4j.core.constants.HttpMethod;
+import com.ericsson.expr4j.core.exceptions.ErrorCode;
 import com.ericsson.expr4j.service.Expression4JConfigurationService;
 import com.ericsson.expr4j.service.JsonHttpService;
 import com.ericsson.expr4j.service.JsonService;
@@ -44,9 +43,10 @@ public class ExpressionWebServiceBean implements ExpressionWebService {
 			ExpressionResponse expressionResponse = (ExpressionResponse)this.jsonService.fromJson(jsonResponse,ExpressionResponse.class);
 			return expressionResponse;			
 		} catch (Exception ex) {
-			ex.printStackTrace(new PrintStream(System.out));
+			ExpressionResponse expressionResponse = new ExpressionResponse();
+			expressionResponse.setErrorCode(ErrorCode.INTERNAL_ERROR);
+			return expressionResponse;
 		}
-		return null;
 	}
 
 }
